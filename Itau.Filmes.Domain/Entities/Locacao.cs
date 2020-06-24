@@ -6,14 +6,14 @@ namespace Itau.Filmes.Domain.Entities
 {
     public class Locacao: Base
     {
-        public int IdFilme { get; set; }
-        public int IdCliente { get; set; }
+        public int FilmeId { get; set; }
+        public int ClienteId { get; set; }
         public DateTime DataLocacao { get; set; }
         public DateTime DataDevolucao { get; set; }
         public Decimal PrecoDiaria { get; set; }
         //public Enum EnumSituacao { get; set; }
 
-        public virtual Filme Filme { get; set; }
-        public virtual Cliente Cliente { get; set; }
+        public Filme Filme { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

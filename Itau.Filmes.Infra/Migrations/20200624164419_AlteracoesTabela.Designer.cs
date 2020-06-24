@@ -4,14 +4,16 @@ using Itau.Filmes.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Itau.Filmes.Infra.Migrations
 {
     [DbContext(typeof(JuridicoContexto))]
-    partial class JuridicoContextoModelSnapshot : ModelSnapshot
+    [Migration("20200624164419_AlteracoesTabela")]
+    partial class AlteracoesTabela
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,25 +28,17 @@ namespace Itau.Filmes.Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasColumnType("varchar(11)");
-
-                    b.Property<string>("CodCliente")
-                        .IsRequired()
-                        .HasColumnType("varchar(10)");
+                    b.Property<int>("CodCliente")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dsCliente")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dsEndereco")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -61,7 +55,7 @@ namespace Itau.Filmes.Infra.Migrations
                     b.Property<DateTime>("DataDevolucao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("LocacaoId")
+                    b.Property<int?>("LocacaoId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("ValorDesconto")
@@ -93,12 +87,14 @@ namespace Itau.Filmes.Infra.Migrations
                     b.Property<bool>("Dublado")
                         .HasColumnType("bit");
 
-                    b.Property<int>("GeneroId")
+                    b.Property<int?>("GeneroId")
                         .HasColumnType("int");
 
                     b.Property<string>("dsFilme")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("idGenero")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -115,8 +111,7 @@ namespace Itau.Filmes.Infra.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("dsGenero")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -130,7 +125,7 @@ namespace Itau.Filmes.Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClienteId")
+                    b.Property<int?>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataDevolucao")
@@ -139,7 +134,13 @@ namespace Itau.Filmes.Infra.Migrations
                     b.Property<DateTime>("DataLocacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FilmeId")
+                    b.Property<int?>("FilmeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdCliente")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdFilme")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrecoDiaria")
@@ -158,33 +159,25 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     b.HasOne("Itau.Filmes.Domain.Entities.Locacao", "Locacao")
                         .WithMany()
-                        .HasForeignKey("LocacaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LocacaoId");
                 });
 
             modelBuilder.Entity("Itau.Filmes.Domain.Entities.Filme", b =>
                 {
                     b.HasOne("Itau.Filmes.Domain.Entities.Genero", "Genero")
                         .WithMany()
-                        .HasForeignKey("GeneroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GeneroId");
                 });
 
             modelBuilder.Entity("Itau.Filmes.Domain.Entities.Locacao", b =>
                 {
                     b.HasOne("Itau.Filmes.Domain.Entities.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClienteId");
 
                     b.HasOne("Itau.Filmes.Domain.Entities.Filme", "Filme")
                         .WithMany()
-                        .HasForeignKey("FilmeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FilmeId");
                 });
 #pragma warning restore 612, 618
         }

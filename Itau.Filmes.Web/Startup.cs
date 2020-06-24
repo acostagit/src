@@ -22,10 +22,10 @@ namespace Itau.Filmes.Web
         {
             services.AddDbContext<JuridicoContexto>(opt =>
                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            //services.AddMvcCore();
             //services.AddControllers();
 
-            //services.AddControllersWithViews();
+            services.AddControllersWithViews();
 
         }
 
@@ -44,7 +44,7 @@ namespace Itau.Filmes.Web
 
             app.UseRouting();
 
-            app.UseAuthorization();
+           // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

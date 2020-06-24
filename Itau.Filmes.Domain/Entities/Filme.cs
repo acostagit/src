@@ -9,5 +9,8 @@ namespace Itau.Filmes.Domain.Entities
         public int CodFilme { get; set; }
         public string dsFilme { get; set; }
         public bool Dublado { get; set; }
+
+        public int GeneroId { get; set; }
+        public Genero Genero { get; set; }
     }
 }

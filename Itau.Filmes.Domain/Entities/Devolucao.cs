@@ -11,6 +11,7 @@ namespace Itau.Filmes.Domain.Entities
         public decimal ValorDesconto { get; set; }
         public decimal ValorMulta { get; set; }
 
+        public int LocacaoId { get; set; }
         public Locacao Locacao { get; set; }
     }
 }
