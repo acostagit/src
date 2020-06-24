@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{D79596CC-C3CE-4277-B031-CACE8CA7092B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Application", "{C225E8E7-C566-433C-8FDC-AC1DCEB688D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{2889C0DA-DF19-488B-94D4-F9AA575D6ACD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infrastructure", "4-Infrastructure", "{0BF766C0-B012-4EC2-97C8-7E4ADE4E737F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Domain", "Itau.Filmes.Domain\Itau.Filmes.Domain.csproj", "{F02666AB-22D4-4B24-B994-9C0AA0EEE585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Infra", "Itau.Filmes.Infra\Itau.Filmes.Infra.csproj", "{4818B2F4-3799-418A-86D4-AEEF5CECE922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Application", "Itau.Filmes.Application\Itau.Filmes.Application.csproj", "{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Web", "Itau.Filmes.Web\Itau.Filmes.Web.csproj", "{041E02FC-EFA9-4595-BC24-82E77782A7C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F02666AB-22D4-4B24-B994-9C0AA0EEE585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02666AB-22D4-4B24-B994-9C0AA0EEE585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02666AB-22D4-4B24-B994-9C0AA0EEE585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02666AB-22D4-4B24-B994-9C0AA0EEE585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4818B2F4-3799-418A-86D4-AEEF5CECE922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4818B2F4-3799-418A-86D4-AEEF5CECE922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4818B2F4-3799-418A-86D4-AEEF5CECE922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4818B2F4-3799-418A-86D4-AEEF5CECE922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F02666AB-22D4-4B24-B994-9C0AA0EEE585} = {2889C0DA-DF19-488B-94D4-F9AA575D6ACD}
+		{4818B2F4-3799-418A-86D4-AEEF5CECE922} = {0BF766C0-B012-4EC2-97C8-7E4ADE4E737F}
+		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133} = {C225E8E7-C566-433C-8FDC-AC1DCEB688D5}
+		{041E02FC-EFA9-4595-BC24-82E77782A7C7} = {D79596CC-C3CE-4277-B031-CACE8CA7092B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE00435C-5FFB-4064-B185-EB037C62A1BA}
+	EndGlobalSection
+EndGlobal
