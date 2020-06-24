@@ -198,7 +198,7 @@ namespace Itau.Filmes.Infra.Migrations
                     b.HasOne("Itau.Filmes.Domain.Entities.Cliente", "Cliente")
                         .WithOne("Endereco")
                         .HasForeignKey("Itau.Filmes.Domain.Entities.Endereco", "ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 

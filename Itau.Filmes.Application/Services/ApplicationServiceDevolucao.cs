@@ -9,37 +9,37 @@ namespace Itau.Filmes.Application.Services
 {
     public class ApplicationServiceDevolucao: IApplicationServiceDevolucao
     {
-        private readonly IDevolucaoService _DevolucaoService;
+        private readonly IDevolucaoService _devolucaoService;
         //private readonly IMapperDevolucao _mapperDevolucao;
 
-        public ApplicationServiceDevolucao(IDevolucaoService DevolucaoService)
+        public ApplicationServiceDevolucao(IDevolucaoService devolucaoService)
         {
-            _DevolucaoService = DevolucaoService;
+            _devolucaoService = devolucaoService;
         }
 
         public void Add(Devolucao Devolucao)
         {
-            _DevolucaoService.Add(Devolucao);
+            _devolucaoService.Add(Devolucao);
         }
 
         public IEnumerable<Devolucao> GetAll()
         {
-            return _DevolucaoService.GetAll();
+            return _devolucaoService.GetAll();
         }
 
         public Devolucao GetById(int id)
         {
-            return _DevolucaoService.GetById(id);
+            return _devolucaoService.GetById(id);
         }
 
         public void Remove(Devolucao Devolucao)
         {
-            _DevolucaoService.Delete(Devolucao);
+            _devolucaoService.Delete(Devolucao);
         }
 
         public void Update(Devolucao Devolucao)
         {
-            _DevolucaoService.Update(Devolucao);
+            _devolucaoService.Update(Devolucao);
         }
     }
 }

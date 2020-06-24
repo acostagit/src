@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Itau.Filmes.Infra.Migrations
 {
     [DbContext(typeof(JuridicoContexto))]
-    [Migration("20200624182750_Inicio")]
+    [Migration("20200624211145_Inicio")]
     partial class Inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -200,7 +200,7 @@ namespace Itau.Filmes.Infra.Migrations
                     b.HasOne("Itau.Filmes.Domain.Entities.Cliente", "Cliente")
                         .WithOne("Endereco")
                         .HasForeignKey("Itau.Filmes.Domain.Entities.Endereco", "ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 

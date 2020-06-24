@@ -3,14 +3,13 @@ using Itau.Filmes.Domain.Interfaces.Repository;
 using Itau.Filmes.Infra.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Itau.Filmes.Infra.Repository
 {
-    public class FilmeRepository : RepositoryBase<Filme>, IFilmeRepository
+    public class DevolucaoRepository : RepositoryBase<Devolucao>, IDevolucaoRepository
     {
-        public FilmeRepository(JuridicoContexto context) : base(context)
+        public DevolucaoRepository(JuridicoContexto context) : base(context)
         {
 
         }

@@ -9,36 +9,36 @@ namespace Itau.Filmes.Application.Services
 {
     public class ApplicationServiceEndereco: IApplicationServiceEndereco
     {
-        private readonly IEnderecoService _EnderecoService;
+        private readonly IEnderecoService _enderecoService;
 
-        public ApplicationServiceEndereco(IEnderecoService EnderecoService)
+        public ApplicationServiceEndereco(IEnderecoService enderecoService)
         {
-            _EnderecoService = EnderecoService;
+            _enderecoService = enderecoService;
         }
 
         public void Add(Endereco Endereco)
         {
-            _EnderecoService.Add(Endereco);
+            _enderecoService.Add(Endereco);
         }
 
         public IEnumerable<Endereco> GetAll()
         {
-            return _EnderecoService.GetAll();
+            return _enderecoService.GetAll();
         }
 
         public Endereco GetById(int id)
         {
-            return _EnderecoService.GetById(id);
+            return _enderecoService.GetById(id);
         }
 
         public void Remove(Endereco Endereco)
         {
-            _EnderecoService.Delete(Endereco);
+            _enderecoService.Delete(Endereco);
         }
 
         public void Update(Endereco Endereco)
         {
-            _EnderecoService.Update(Endereco);
+            _enderecoService.Update(Endereco);
         }
     }
 }

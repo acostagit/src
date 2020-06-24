@@ -9,36 +9,36 @@ namespace Itau.Filmes.Application.Services
 {
     public class ApplicationServiceLocacao: IApplicationServiceLocacao
     {
-        private readonly ILocacaoService _LocacaoService;
+        private readonly ILocacaoService _locacaoService;
 
-        public ApplicationServiceLocacao(ILocacaoService LocacaoService)
+        public ApplicationServiceLocacao(ILocacaoService locacaoService)
         {
-            _LocacaoService = LocacaoService;
+            _locacaoService = locacaoService;
         }
 
         public void Add(Locacao Locacao)
         {
-            _LocacaoService.Add(Locacao);
+            _locacaoService.Add(Locacao);
         }
 
         public IEnumerable<Locacao> GetAll()
         {
-            return _LocacaoService.GetAll();
+            return _locacaoService.GetAll();
         }
 
         public Locacao GetById(int id)
         {
-            return _LocacaoService.GetById(id);
+            return _locacaoService.GetById(id);
         }
 
         public void Remove(Locacao Locacao)
         {
-            _LocacaoService.Delete(Locacao);
+            _locacaoService.Delete(Locacao);
         }
 
         public void Update(Locacao Locacao)
         {
-            _LocacaoService.Update(Locacao);
+            _locacaoService.Update(Locacao);
         }
     }
 }
