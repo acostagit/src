@@ -15,6 +15,18 @@ namespace Itau.Filmes.Infra.Data
             if (contexto.Clientes.Any())
                 return;
 
+            var enderecos = new Endereco[]
+            {
+                new Endereco
+                {
+                    Logradouro="Rua Brasil, 755",
+                    Bairro="Belo Horizonte",
+                    CEP="083050000"
+
+                }
+            };
+            contexto.AddRange(enderecos);
+
             var clientes = new Cliente[]
             {
                 new Cliente
@@ -22,7 +34,7 @@ namespace Itau.Filmes.Infra.Data
                     CodCliente=100,
                     CPF="12345678914",
                     dsCliente="Maria Torres",
-                    dsEndereco="Rua Brasil, 755, Belo Horizonte",
+                    Endereco =enderecos[0],
                     Email="maria@teste.com.br",
                 },
                 new Cliente
@@ -30,7 +42,7 @@ namespace Itau.Filmes.Infra.Data
                     CodCliente=200,
                     CPF="12345678915",
                     dsCliente="Luzia Silva",
-                    dsEndereco="Rua Alemanha, 1755, Sao Paulo",
+                    Endereco =enderecos[0],
                     Email="luzia@teste.com.br",
                 }
             };
@@ -74,6 +86,7 @@ namespace Itau.Filmes.Infra.Data
                 }
              };
             contexto.AddRange(filmes);
+
             contexto.SaveChanges();
         }
     }

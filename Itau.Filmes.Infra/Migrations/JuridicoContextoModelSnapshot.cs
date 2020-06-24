@@ -42,10 +42,6 @@ namespace Itau.Filmes.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("dsEndereco")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Cliente");
@@ -78,6 +74,40 @@ namespace Itau.Filmes.Infra.Migrations
                     b.HasIndex("LocacaoId");
 
                     b.ToTable("Devolucao");
+                });
+
+            modelBuilder.Entity("Itau.Filmes.Domain.Entities.Endereco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Logradouro")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("dsEndereco")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId")
+                        .IsUnique();
+
+                    b.ToTable("Endereco");
                 });
 
             modelBuilder.Entity("Itau.Filmes.Domain.Entities.Filme", b =>
@@ -159,6 +189,15 @@ namespace Itau.Filmes.Infra.Migrations
                     b.HasOne("Itau.Filmes.Domain.Entities.Locacao", "Locacao")
                         .WithMany()
                         .HasForeignKey("LocacaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Itau.Filmes.Domain.Entities.Endereco", b =>
+                {
+                    b.HasOne("Itau.Filmes.Domain.Entities.Cliente", "Cliente")
+                        .WithOne("Endereco")
+                        .HasForeignKey("Itau.Filmes.Domain.Entities.Endereco", "ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
