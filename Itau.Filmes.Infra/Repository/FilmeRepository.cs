@@ -8,16 +8,15 @@ using System.Text;
 
 namespace Itau.Filmes.Infra.Repository
 {
-    public class ClienteRepository : RepositoryBase<Cliente>, IClienteRepository
+    public class FilmeRepository : RepositoryBase<Filme>, IFilmeRepository
     {
-        public ClienteRepository(JuridicoContexto context) : base(context)
+        public FilmeRepository(JuridicoContexto context) : base(context)
         {
 
         }
-        public IEnumerable<Cliente> ListAllCliente()
+        public IEnumerable<Filme> ListAllCliente()
         {
-            return _context.Clientes.ToList();
+            return _context.Filmes.ToList();
         }
-
     }
 }

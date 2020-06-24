@@ -1,7 +1,9 @@
 ﻿using Itau.Filmes.Domain.Interfaces.Repository;
 using Itau.Filmes.Infra.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Itau.Filmes.Infra.Repository
@@ -16,31 +18,31 @@ namespace Itau.Filmes.Infra.Repository
         }
         public virtual TEntity Add(TEntity entity)
         {
-            //_context.Set<TEntity>.Add(entity);
-            //_context.SaveChanges();
-            //return entity;
-
-            throw new NotImplementedException();
+            _context.Set<TEntity>().Add(entity);
+            _context.SaveChanges();
+            return entity;
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Set<TEntity>().Remove(entity);
+            _context.SaveChanges();
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().AsEnumerable();
         }
 
         public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().Find(id);
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }
