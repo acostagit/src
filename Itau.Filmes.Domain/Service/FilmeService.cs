@@ -16,27 +16,27 @@ namespace Itau.Filmes.Domain.Service
         }
         public void Add(Filme entity)
         {
-            throw new NotImplementedException();
+            _filmeRepository.Add(entity);
         }
 
         public void Delete(Filme entity)
         {
-            throw new NotImplementedException();
+            _filmeRepository.Delete(entity);
         }
 
         public IEnumerable<Filme> GetAll()
         {
-            throw new NotImplementedException();
+            return _filmeRepository.GetAll();
         }
 
         public Filme GetById(int id)
         {
-            throw new NotImplementedException();
+            return _filmeRepository.GetById(id);
         }
 
         public void Update(Filme entity)
         {
-            throw new NotImplementedException();
+            _filmeRepository.Update(entity);
         }
     }
 }

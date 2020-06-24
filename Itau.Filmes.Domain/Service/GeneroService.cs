@@ -17,11 +17,6 @@ namespace Itau.Filmes.Domain.Service
         }
         public void Add(Genero entity)
         {
-            if (entity is null)
-            {
-                throw new ArgumentNullException(nameof(entity));
-            }
-
             _generoRepository.Add(entity);
         }
 

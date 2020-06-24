@@ -11,7 +11,7 @@ namespace Itau.Filmes.Domain.Entities
         public DateTime DataLocacao { get; set; }
         public DateTime DataDevolucao { get; set; }
         public Decimal PrecoDiaria { get; set; }
-        public Enum EnumSituacao { get; set; }
+        //public Enum EnumSituacao { get; set; }
 
         public virtual Filme Filme { get; set; }
         public virtual Cliente Cliente { get; set; }
