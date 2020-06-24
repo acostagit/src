@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Itau.Filmes.Web
+namespace Itau.Filmes.API
 {
     public class Startup
     {
@@ -25,14 +25,13 @@ namespace Itau.Filmes.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<JuridicoContexto>(opt =>
-               opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+              opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //services.AddMvcCore();
-            //services.AddControllers();
 
             services.AddControllersWithViews();
 
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-
+        
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,21 +41,16 @@ namespace Itau.Filmes.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-            app.UseStaticFiles();
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
-           // app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

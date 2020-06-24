@@ -1,9 +1,7 @@
 ﻿using Itau.Filmes.Application.Interfaces;
 using Itau.Filmes.Domain.Entities;
 using Itau.Filmes.Domain.Interfaces.Services;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Itau.Filmes.Application.Services
 {
@@ -16,6 +14,8 @@ namespace Itau.Filmes.Application.Services
         {
             _clienteService = clienteService;
         }
+
+
 
         public void Add(Cliente cliente)
         {

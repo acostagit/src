@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Itau.Filmes.Application\Itau.Filmes.Application.csproj" />
     <ProjectReference Include="..\Itau.Filmes.Infra\Itau.Filmes.Infra.csproj" />
   </ItemGroup>
 

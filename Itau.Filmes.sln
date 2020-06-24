@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{28
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infrastructure", "4-Infrastructure", "{0BF766C0-B012-4EC2-97C8-7E4ADE4E737F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Domain", "Itau.Filmes.Domain\Itau.Filmes.Domain.csproj", "{F02666AB-22D4-4B24-B994-9C0AA0EEE585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itau.Filmes.Domain", "Itau.Filmes.Domain\Itau.Filmes.Domain.csproj", "{F02666AB-22D4-4B24-B994-9C0AA0EEE585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Infra", "Itau.Filmes.Infra\Itau.Filmes.Infra.csproj", "{4818B2F4-3799-418A-86D4-AEEF5CECE922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itau.Filmes.Infra", "Itau.Filmes.Infra\Itau.Filmes.Infra.csproj", "{4818B2F4-3799-418A-86D4-AEEF5CECE922}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Application", "Itau.Filmes.Application\Itau.Filmes.Application.csproj", "{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itau.Filmes.Application", "Itau.Filmes.Application\Itau.Filmes.Application.csproj", "{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.Web", "Itau.Filmes.Web\Itau.Filmes.Web.csproj", "{041E02FC-EFA9-4595-BC24-82E77782A7C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itau.Filmes.API", "Itau.Filmes.API\Itau.Filmes.API.csproj", "{A7EDDB02-1BA7-44F8-86DA-617105037153}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133}.Release|Any CPU.Build.0 = Release|Any CPU
-		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{041E02FC-EFA9-4595-BC24-82E77782A7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7EDDB02-1BA7-44F8-86DA-617105037153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EDDB02-1BA7-44F8-86DA-617105037153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EDDB02-1BA7-44F8-86DA-617105037153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EDDB02-1BA7-44F8-86DA-617105037153}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,7 +49,7 @@ Global
 		{F02666AB-22D4-4B24-B994-9C0AA0EEE585} = {2889C0DA-DF19-488B-94D4-F9AA575D6ACD}
 		{4818B2F4-3799-418A-86D4-AEEF5CECE922} = {0BF766C0-B012-4EC2-97C8-7E4ADE4E737F}
 		{ABDB6B93-DFB7-4294-B07F-A9FE21F1D133} = {C225E8E7-C566-433C-8FDC-AC1DCEB688D5}
-		{041E02FC-EFA9-4595-BC24-82E77782A7C7} = {D79596CC-C3CE-4277-B031-CACE8CA7092B}
+		{A7EDDB02-1BA7-44F8-86DA-617105037153} = {D79596CC-C3CE-4277-B031-CACE8CA7092B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE00435C-5FFB-4064-B185-EB037C62A1BA}
