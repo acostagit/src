@@ -22,7 +22,10 @@ namespace Itau.Filmes.Domain.Service
 
         public void Delete(Genero entity)
         {
-            _generoRepository.Delete(entity);
+            //_generoRepository.Delete(entity);
+
+            entity.Ativo = false;
+            Update(entity);
         }
 
         public IEnumerable<Genero> GetAll()

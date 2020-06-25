@@ -1,8 +1,4 @@
-using Itau.Filmes.Application.Interfaces;
-using Itau.Filmes.Application.Services;
-using Itau.Filmes.Domain.Interfaces.Repository;
 using Itau.Filmes.Infra.Data;
-using Itau.Filmes.Infra.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,10 +22,8 @@ namespace Itau.Filmes.API
         {
             services.AddDbContext<JuridicoContexto>(opt =>
               opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddMvcCore();
 
             services.AddControllersWithViews();
-
         
             services.AddControllers();
         }

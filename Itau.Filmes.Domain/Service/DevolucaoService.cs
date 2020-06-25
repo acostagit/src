@@ -22,7 +22,10 @@ namespace Itau.Filmes.Domain.Service
 
         public void Delete(Devolucao entity)
         {
-            _devolucaoRepository.Delete(entity);
+            //_devolucaoRepository.Delete(entity);
+
+            entity.Ativo = false;
+            Update(entity);
         }
 
         public IEnumerable<Devolucao> GetAll()
@@ -38,6 +41,22 @@ namespace Itau.Filmes.Domain.Service
         public void Update(Devolucao entity)
         {
             _devolucaoRepository.Update(entity);
+        }
+
+        public string DevolverFilme(Devolucao devolucao)
+        {
+            var diasAtrados = 0;
+            bool atrasado = false;
+            var msg = "Data de devolução deste filme está atrasada.";
+            if (DateTime.Compare(devolucao.DataDevolucao, DateTime.Now) > 0)
+            {
+                diasAtrados = DateTime.Now.Day - devolucao.DataDevolucao.Day;
+                atrasado = true;
+            }
+            if (!atrasado)
+                return "Em dia";
+
+            return msg + " " + diasAtrados.ToString();
         }
     }
 }

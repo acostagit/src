@@ -36,6 +36,7 @@ namespace Itau.Filmes.Infra.Data
                     dsCliente="Maria Torres",
                     Endereco =enderecos[0],
                     Email="maria@teste.com.br",
+                    Ativo = true
                 },
                 new Cliente
                 {
@@ -44,6 +45,7 @@ namespace Itau.Filmes.Infra.Data
                     dsCliente="Luzia Silva",
                     Endereco =enderecos[0],
                     Email="luzia@teste.com.br",
+                    Ativo = true
                 }
             };
             contexto.AddRange(clientes);

@@ -21,7 +21,9 @@ namespace Itau.Filmes.Domain.Service
 
         public void Delete(Filme entity)
         {
-            _filmeRepository.Delete(entity);
+            // _filmeRepository.Delete(entity);
+            entity.Ativo = false;
+            Update(entity);
         }
 
         public IEnumerable<Filme> GetAll()

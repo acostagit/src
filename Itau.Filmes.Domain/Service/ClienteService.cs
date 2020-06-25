@@ -21,7 +21,10 @@ namespace Itau.Filmes.Domain.Service
 
         public void Delete(Cliente entity)
         {
-            _clienteRepository.Delete(entity);
+            //_clienteRepository.Delete(entity);
+
+            entity.Ativo = false;
+            Update(entity);
         }
 
         public IEnumerable<Cliente> GetAll()
@@ -31,12 +34,17 @@ namespace Itau.Filmes.Domain.Service
 
         public Cliente GetById(int id)
         {
-            return _clienteRepository.GetById(id);
+            var cliente = _clienteRepository.GetById(id);
+
+            if (cliente != null)
+                new Exception("Locador já cadastrado");
+
+            return cliente;
         }
 
         public void Update(Cliente entity)
         {
-            _clienteRepository.Update(entity);
+            _clienteRepository.Update(entity);          
         }
     }
 }

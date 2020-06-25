@@ -13,5 +13,10 @@ namespace Itau.Filmes.Infra.Repository
         {
 
         }
+
+        public string Devolver(Devolucao devolucao)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

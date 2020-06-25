@@ -13,6 +13,7 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Ativo = table.Column<bool>(nullable: false),
                     CodCliente = table.Column<string>(type: "varchar(10)", nullable: false),
                     CPF = table.Column<string>(type: "varchar(11)", nullable: false),
                     dsCliente = table.Column<string>(type: "varchar(50)", nullable: false),
@@ -29,6 +30,7 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Ativo = table.Column<bool>(nullable: false),
                     dsGenero = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
@@ -42,6 +44,7 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Ativo = table.Column<bool>(nullable: false),
                     dsEndereco = table.Column<string>(type: "varchar(100)", nullable: false),
                     Logradouro = table.Column<string>(type: "varchar(100)", nullable: false),
                     Bairro = table.Column<string>(type: "varchar(50)", nullable: false),
@@ -65,6 +68,7 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Ativo = table.Column<bool>(nullable: false),
                     CodFilme = table.Column<int>(nullable: false),
                     dsFilme = table.Column<string>(type: "varchar(50)", nullable: false),
                     Dublado = table.Column<bool>(nullable: false),
@@ -87,6 +91,7 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Ativo = table.Column<bool>(nullable: false),
                     FilmeId = table.Column<int>(nullable: false),
                     ClienteId = table.Column<int>(nullable: false),
                     DataLocacao = table.Column<DateTime>(nullable: false),
@@ -116,6 +121,7 @@ namespace Itau.Filmes.Infra.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Ativo = table.Column<bool>(nullable: false),
                     DataDevolucao = table.Column<DateTime>(nullable: false),
                     ValorPago = table.Column<decimal>(nullable: false),
                     ValorDesconto = table.Column<decimal>(nullable: false),

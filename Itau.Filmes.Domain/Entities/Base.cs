@@ -9,5 +9,7 @@ namespace Itau.Filmes.Domain.Entities
     {
         [Key]
         public int Id { get; set; }
+
+        public bool Ativo { get; set; }
     }
 }

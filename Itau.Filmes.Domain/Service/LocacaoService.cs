@@ -22,7 +22,10 @@ namespace Itau.Filmes.Domain.Service
 
         public void Delete(Locacao entity)
         {
-            _locacaoRepository.Delete(entity);
+            // _locacaoRepository.Delete(entity);
+
+            entity.Ativo = false;
+            Update(entity);
         }
 
         public IEnumerable<Locacao> GetAll()
@@ -32,7 +35,13 @@ namespace Itau.Filmes.Domain.Service
 
         public Locacao GetById(int id)
         {
-            return _locacaoRepository.GetById(id);
+            var locacao =  _locacaoRepository.GetById(id);
+
+            if (locacao != null)
+                new Exception("Filme já alugado. Por favor, alugue outro!");
+
+            return locacao;
+
         }
 
         public void Update(Locacao entity)

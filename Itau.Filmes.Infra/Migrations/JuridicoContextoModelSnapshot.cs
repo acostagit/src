@@ -26,6 +26,9 @@ namespace Itau.Filmes.Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasColumnType("varchar(11)");
@@ -53,6 +56,9 @@ namespace Itau.Filmes.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("DataDevolucao")
                         .HasColumnType("datetime2");
@@ -82,6 +88,9 @@ namespace Itau.Filmes.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Bairro")
                         .IsRequired()
@@ -117,6 +126,9 @@ namespace Itau.Filmes.Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
                     b.Property<int>("CodFilme")
                         .HasColumnType("int");
 
@@ -144,6 +156,9 @@ namespace Itau.Filmes.Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
                     b.Property<string>("dsGenero")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
@@ -159,6 +174,9 @@ namespace Itau.Filmes.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
