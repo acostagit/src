@@ -15,8 +15,7 @@ namespace ClienteControllerTest
     {
         private HttpClient _client;
 
-        [Fact]
-        public void FilmeAdicionar()
+        public FimeAPITest()
         {
             var server = new TestServer(new WebHostBuilder()
                 .UseEnvironment("Development")

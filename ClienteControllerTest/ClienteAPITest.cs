@@ -23,8 +23,7 @@ namespace ClienteControllerTest
 
         private HttpClient _client;
 
-        [Fact]
-        public void ClienteAdicionar()
+        public ClienteAPITest()
         {
             var server = new TestServer(new WebHostBuilder()
                 .UseEnvironment("Development")
